@@ -10,7 +10,12 @@ Encrypt with AES-256-CTR.
 
 ###### Syntax
 ```js
-AES256CTR.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES256CTR.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string 
 ```
 
 ###### Parameters
@@ -23,6 +28,9 @@ AES256CTR.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -32,7 +40,12 @@ Decrypts the character string encrypted with AES-256-CTR.
 
 ###### Syntax
 ```js
-AES256CTR.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES256CTR.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string 
 ```
 
 ###### Parameters
@@ -44,6 +57,9 @@ AES256CTR.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -94,7 +110,12 @@ Encrypt with AES-192-CTR.
 
 ###### Syntax
 ```js
-AES192CTR.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES192CTR.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -107,6 +128,9 @@ AES192CTR.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -116,7 +140,12 @@ Decrypts the character string encrypted with AES-192-CTR.
 
 ###### Syntax
 ```js
-AES192CTR.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES192CTR.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -128,6 +157,9 @@ AES192CTR.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -178,7 +210,12 @@ Encrypt with AES-128-CTR.
 
 ###### Syntax
 ```js
-AES128CTR.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES128CTR.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -191,6 +228,9 @@ AES128CTR.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -200,7 +240,12 @@ Decrypts the character string encrypted with AES-128-CTR.
 
 ###### Syntax
 ```js
-AES128CTR.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES128CTR.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -212,6 +257,9 @@ AES128CTR.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -262,7 +310,12 @@ Encrypt with AES-256-CBC.
 
 ###### Syntax
 ```js
-AES256CBC.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES256CBC.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -275,6 +328,9 @@ AES256CBC.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -284,7 +340,12 @@ Decrypts the character string encrypted with AES-256-CBC.
 
 ###### Syntax
 ```js
-AES256CBC.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES256CBC.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -296,6 +357,9 @@ AES256CBC.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -346,7 +410,12 @@ Encrypt with AES-192-CBC.
 
 ###### Syntax
 ```js
-AES192CBC.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES192CBC.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -359,6 +428,9 @@ AES192CBC.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -368,7 +440,12 @@ Decrypts the character string encrypted with AES-192-CBC.
 
 ###### Syntax
 ```js
-AES192CBC.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES192CBC.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -380,6 +457,9 @@ AES192CBC.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -430,7 +510,12 @@ Encrypt with AES-128-CBC.
 
 ###### Syntax
 ```js
-AES128CBC.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES128CBC.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -443,6 +528,9 @@ AES128CBC.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -452,7 +540,12 @@ Decrypts the character string encrypted with AES-128-CBC.
 
 ###### Syntax
 ```js
-AES128CBC.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES128CBC.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -464,6 +557,9 @@ AES128CBC.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -514,7 +610,12 @@ Encrypt with AES-256-CFB.
 
 ###### Syntax
 ```js
-AES256CFB.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES256CFB.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -527,6 +628,9 @@ AES256CFB.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -536,7 +640,12 @@ Decrypts the character string encrypted with AES-256-CFB.
 
 ###### Syntax
 ```js
-AES256CFB.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES256CFB.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -548,6 +657,9 @@ AES256CFB.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -598,7 +710,12 @@ Encrypt with AES-192-CFB.
 
 ###### Syntax
 ```js
-AES192CFB.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES192CFB.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -611,6 +728,9 @@ AES192CFB.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -620,7 +740,12 @@ Decrypts the character string encrypted with AES-192-CFB.
 
 ###### Syntax
 ```js
-AES192CFB.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES192CFB.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -632,6 +757,9 @@ AES192CFB.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.
@@ -682,7 +810,12 @@ Encrypt with AES-128-CFB.
 
 ###### Syntax
 ```js
-AES128CFB.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string 
+AES128CFB.encrypt(
+    plaintext: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    outputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -695,6 +828,9 @@ AES128CFB.encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): str
 - __iv__: string|Buffer  
     Encryption initialization vector.
 
+- __outputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the encrypted data to be output. The default is base64.
+
 ###### Returns
 Returns an encrypted string.
 
@@ -704,7 +840,12 @@ Decrypts the character string encrypted with AES-128-CFB.
 
 ###### Syntax
 ```js
-AES128CFB.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string 
+AES128CFB.decrypt(
+    encrypted: string,
+    key: string|Buffer,
+    iv: string|Buffer,
+    inputEncoding: 'hex'|'binary'|'base64' = 'base64'
+): string
 ```
 
 ###### Parameters
@@ -716,6 +857,9 @@ AES128CFB.decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): str
 
 - __iv__: string|Buffer  
     Encryption initialization vector.
+
+- __inputEncoding__: 'hex'|'binary'|'base64'  
+    The format of the input decrypted data. The default is base64.
 
 ###### Returns
 Returns an decrypted string.

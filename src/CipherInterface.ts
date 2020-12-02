@@ -23,20 +23,21 @@ export default interface {
   /**
    * Returns the encrypted text.
    * 
-   * @param  {string} plaintext
-   * @param  {string|Buffer} key
-   * @param  {string|Buffer} iv
+   * @param  {string}         plaintext
+   * @param  {string|Buffer}  key
+   * @param  {string|Buffer}  iv
+   * @param  {'hex'|'binary'|'base64'} outputEncoding
    * @return {string}
    */
-  public encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string;
+  public encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer, outputEncoding: 'hex'|'binary'|'base64' = 'base64'): string;
 
   /**
    * Returns the decrypted text.
    * 
-   * @param  {string} encrypted
-   * @param  {string|Buffer} key
-   * @param  {string|Buffer} iv
-   * @return {string}
+   * @param  {string}         encrypted
+   * @param  {string|Buffer}  key
+   * @param  {string|Buffer}  iv
+   * @param  {'hex'|'binary'|'base64'} inputEncoding
    */
-  public decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string;
+  public decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer, inputEncoding: 'hex'|'binary'|'base64' = 'base64'): string;
 }

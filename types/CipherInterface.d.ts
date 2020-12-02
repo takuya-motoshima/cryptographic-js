@@ -21,19 +21,20 @@ export default interface  {
     /**
      * Returns the encrypted text.
      *
-     * @param  {string} plaintext
-     * @param  {string|Buffer} key
-     * @param  {string|Buffer} iv
+     * @param  {string}         plaintext
+     * @param  {string|Buffer}  key
+     * @param  {string|Buffer}  iv
+     * @param  {'hex'|'binary'|'base64'} outputEncoding
      * @return {string}
      */
-    encrypt(plaintext: string, key: string | Buffer, iv: string | Buffer): string;
+    encrypt(plaintext: string, key: string | Buffer, iv: string | Buffer, outputEncoding?: 'hex' | 'binary' | 'base64'): string;
     /**
      * Returns the decrypted text.
      *
-     * @param  {string} encrypted
-     * @param  {string|Buffer} key
-     * @param  {string|Buffer} iv
-     * @return {string}
+     * @param  {string}         encrypted
+     * @param  {string|Buffer}  key
+     * @param  {string|Buffer}  iv
+     * @param  {'hex'|'binary'|'base64'} inputEncoding
      */
-    decrypt(encrypted: string, key: string | Buffer, iv: string | Buffer): string;
+    decrypt(encrypted: string, key: string | Buffer, iv: string | Buffer, inputEncoding?: 'hex' | 'binary' | 'base64'): string;
 }

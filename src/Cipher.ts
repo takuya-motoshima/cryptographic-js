@@ -28,13 +28,14 @@ export default abstract class Cipher implements CipherInterface {
   /**
    * Returns the encrypted text.
    * 
-   * @param  {string} plaintext
-   * @param  {string|Buffer} key
-   * @param  {string|Buffer} iv
+   * @param  {string}         plaintext
+   * @param  {string|Buffer}  key
+   * @param  {string|Buffer}  iv
+   * @param  {'hex'|'binary'|'base64'} outputEncoding
    * @return {string}
    */
-  public encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer): string {
-  // Convert key and IV to buffer.
+  public encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer, outputEncoding: 'hex'|'binary'|'base64' = 'base64'): string {
+    // Convert key and IV to buffer.
     if (!Buffer.isBuffer(key)) key = Buffer.from(key);
     if (!Buffer.isBuffer(iv)) iv = Buffer.from(iv);
 
@@ -42,22 +43,27 @@ export default abstract class Cipher implements CipherInterface {
     if (Buffer.byteLength(key) !== this.keySize) throw new Error(`Key length must be ${this.keySize} bytes long`);
     if (Buffer.byteLength(iv) !== this.ivSize) throw new Error(`IV length must be ${this.ivSize} bytes long`);
 
+    // Plaintext format.
+    const inputEncoding = 'utf8';
+
     // Returns the encrypted text.
     const cipher = crypto.createCipheriv(this.algorithm, key, iv);
-    let encrypted = cipher.update(plaintext, 'utf8', 'hex');
-    encrypted += cipher.final('hex');
+    let encrypted = cipher.update(plaintext, inputEncoding, outputEncoding);
+    encrypted += cipher.final(outputEncoding);
     return encrypted;
   }
 
   /**
    * Returns the decrypted text.
    * 
-   * @param  {string} encrypted
-   * @param  {string|Buffer} key
-   * @param  {string|Buffer} iv
+   * @param  {string}         encrypted
+   * @param  {string|Buffer}  key
+   * @param  {string|Buffer}  iv
+   * @param  {'hex'|'binary'|'base64'} inputEncoding
+   * 
    * @return {string}
    */
-  public decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer): string {
+  public decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer, inputEncoding: 'hex'|'binary'|'base64' = 'base64'): string {
     // Convert key and IV to buffer.
     if (!Buffer.isBuffer(key)) key = Buffer.from(key);
     if (!Buffer.isBuffer(iv)) iv = Buffer.from(iv);
@@ -66,9 +72,12 @@ export default abstract class Cipher implements CipherInterface {
     if (Buffer.byteLength(key) !== this.keySize) throw new Error(`Key length must be ${this.keySize} bytes long`);
     if (Buffer.byteLength(iv) !== this.ivSize) throw new Error(`IV length must be ${this.keySize} bytes long`);
 
+    // Decrypted data format.
+    const outputEncoding = 'utf8';
+
     // Returns the decrypted text.
     const decipher = crypto.createDecipheriv(this.algorithm, key, iv);
-    let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+    let decrypted = decipher.update(encrypted, inputEncoding, outputEncoding);
     decrypted += decipher.final('utf8');
     return decrypted;
   }
