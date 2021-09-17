@@ -2,7 +2,7 @@
   "name": "examples",
   "version": "1.0.0",
   "scripts": {
-    "start": "node encrypt.js"
+    "start": "node main.js"
   },
   "author": "Takuya Motoshima <developer.takuyamotoshima@gmail.com> (https://twitter.com/TakuyaMotoshima)",
   "license": "MIT",

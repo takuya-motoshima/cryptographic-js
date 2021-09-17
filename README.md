@@ -30,7 +30,7 @@ See [CHANGELOG.md](./CHANGELOG.md).
 
 ## Examples
 
-There are some examples in "./examples/main.ts" in this package.Here is the first one to get you started.
+There are some examples in "./examples/main.js" in this package.Here is the first one to get you started.
 
 ## Usage
 
