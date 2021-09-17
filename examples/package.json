@@ -2,16 +2,11 @@
   "name": "examples",
   "version": "1.0.0",
   "scripts": {
-    "start": "ts-node -P tsconfig.json encrypt.ts"
+    "start": "node encrypt.js"
   },
   "author": "Takuya Motoshima <developer.takuyamotoshima@gmail.com> (https://twitter.com/TakuyaMotoshima)",
   "license": "MIT",
-  "devDependencies": {
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.6"
-  },
   "dependencies": {
-    "cryptographic-js": "^1.0.0",
     "nodejs-shared": "^1.0.1"
   }
 }
