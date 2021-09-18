@@ -1,7 +1,6 @@
 # cryptographic-js
 
-This is an encryption/decryption module such as AES.  
-The supported algorithms are as follows.  
+This is an encryption/decryption module such as AES. The supported algorithms are as follows.  
 
 - AES-256-CTR
 - AES-192-CTR
@@ -30,80 +29,88 @@ See [CHANGELOG.md](./CHANGELOG.md).
 
 ## Examples
 
-There are some examples in "./examples/main.js" in this package.Here is the first one to get you started.
+Examples can be found in examples/.
+
+```sh
+$ node examples/aes128cbc.js;
+AES128CBC encryption/decryption result: Hello World -> pS6x15zVXCV+jrHD5mi9wA== -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes128cfb.js;
+AES128CFB encryption/decryption result: Hello World -> WPyaGRIrKsO0eVs= -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes128ctr.js;
+AES128CTR encryption/decryption result: Hello World -> 2vnVo1vaoJiRGtg= -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes192cbc.js;
+AES192CBC encryption/decryption result: Hello World -> Ec2sl0BJljNS0RyaZXNVQw== -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes192cfb.js;
+AES192CFB encryption/decryption result: Hello World -> 1qG9zOP1INKnLck= -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes192ctr.js;
+AES192CTR encryption/decryption result: Hello World -> UFe22J8bEBf7VIs= -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes256cbc.js;
+AES256CBC encryption/decryption result: Hello World -> WWPBNfwZS8VMNPFABFXh9A== -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes256cfb.js;
+AES256CFB encryption/decryption result: Hello World -> V8nc4jzE8IZA/Vs= -> Hello World
+Decryption result in PHP: Hello World
+
+$ node examples/aes256ctr.js;
+AES256CTR encryption/decryption result: Hello World -> O+CPx7gnn1paN1I= -> Hello World
+Decryption result in PHP: Hello World
+```
 
 ## Usage
 
-### Encrypt with AES-256-CTR.
+### AES-256-CTR
 
 ```js
-import { AES256CTR } from 'cryptographic-js';
+import {AES256CTR} from 'cryptographic-js';
+const cipher = new AES256CTR();
 
-// Cryptographic module.
-const aes256ctr = new AES256CTR();
-
-// Plaintext to encrypt.
-const plaintext = 'Hello, World!';
-
-// Generate keys and IV in hexadecimal character format.
-// If you do not specify'hex', you can get the key and IV as Buffer type.
-const key = aes256ctr.createKey('hex');
-const iv = aes256ctr.createIV('hex');
-
-// Encrypt.
-const encrypted = aes256ctr.encrypt(plaintext, key, iv);
-
-// Decrypt.
-const decrypted = aes256ctr.decrypt(encrypted, key, iv);
-console.log(decrypted);// Hello, World!
+const plainText = 'Hello World';
+const key = cipher.createKey('hex');
+const iv = cipher.createIV('hex');
+const encrypted = cipher.encrypt(plainText, key, iv);
+const decrypted = cipher.decrypt(encrypted, key, iv);
+console.log(decrypted);// Hello World
 ```
 
-### Encrypt with AES-256-CBC.
+### AES-256-CBC
 
 ```js
-import { AES256CBC } from 'cryptographic-js';
+import {AES256CBC} from 'cryptographic-js';
 
-// Cryptographic module.
-const aes256cbc = new AES256CBC();
-
-// Plaintext to encrypt.
-const plaintext = 'Hello, World!';
-
-// Generate keys and IV in hexadecimal character format.
-// If you do not specify'hex', you can get the key and IV as Buffer type.
-const key = aes256cbc.createKey('hex');
-const iv = aes256cbc.createIV('hex');
-
-// Encrypt.
-const encrypted = aes256cbc.encrypt(plaintext, key, iv);
-
-// Decrypt.
-const decrypted = aes256cbc.decrypt(encrypted, key, iv);
-console.log(decrypted);// Hello, World!
+const cipher = new AES256CBC();
+const plainText = 'Hello World';
+const key = cipher.createKey('hex');
+const iv = cipher.createIV('hex');
+const encrypted = cipher.encrypt(plainText, key, iv);
+const decrypted = cipher.decrypt(encrypted, key, iv);
+console.log(decrypted);// Hello World
 ```
 
-### Encrypt with AES-256-CBC.
+### AES-256-CBC
 
 ```js
-import { AES256CFB } from 'cryptographic-js';
+import {AES256CFB} from 'cryptographic-js';
 
-// Cryptographic module.
-const aes256cfb = new AES256CFB();
-
-// Plaintext to encrypt.
-const plaintext = 'Hello, World!';
-
-// Generate keys and IV in hexadecimal character format.
-// If you do not specify'hex', you can get the key and IV as Buffer type.
-const key = aes256cfb.createKey('hex');
-const iv = aes256cfb.createIV('hex');
-
-// Encrypt.
-const encrypted = aes256cfb.encrypt(plaintext, key, iv);
-
-// Decrypt.
-const decrypted = aes256cfb.decrypt(encrypted, key, iv);
-console.log(decrypted);// Hello, World!
+const cipher = new AES256CFB();
+const plainText = 'Hello World';
+const key = cipher.createKey('hex');
+const iv = cipher.createIV('hex');
+const encrypted = cipher.encrypt(plainText, key, iv);
+const decrypted = cipher.decrypt(encrypted, key, iv);
+console.log(decrypted);// Hello World
 ```
 
 ## License

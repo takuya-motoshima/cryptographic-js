@@ -98,7 +98,7 @@ export default abstract class Cipher implements CipherInterface {
    */
   public createKey(type: 'buffer'|'hex' = 'buffer'): Buffer|string {
     return type === 'hex'
-      ? cryptoRandomString({ length: this.keySize, type: 'hex' })
+      ? cryptoRandomString({length: this.keySize, type: 'hex'})
       // ? crypto.randomBytes(Math.ceil(this.keySize / 2)).toString('hex').slice(0, this.keySize)
       : crypto.randomBytes(this.keySize);
   }
@@ -111,7 +111,7 @@ export default abstract class Cipher implements CipherInterface {
    */
   public createIV(type: 'buffer'|'hex' = 'buffer'): Buffer|string {
     return type === 'hex'
-      ? cryptoRandomString({ length: this.ivSize, type: 'hex' })
+      ? cryptoRandomString({length: this.ivSize, type: 'hex'})
       // ? crypto.randomBytes(Math.ceil(this.ivSize / 2)).toString('hex').slice(0, this.ivSize)
       : crypto.randomBytes(this.ivSize);
   }
