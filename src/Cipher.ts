@@ -36,12 +36,16 @@ export default abstract class Cipher implements CipherInterface {
    */
   public encrypt(plaintext: string, key: string|Buffer, iv: string|Buffer, outputEncoding: 'hex'|'binary'|'base64' = 'base64'): string {
     // Convert key and IV to buffer.
-    if (!Buffer.isBuffer(key)) key = Buffer.from(key);
-    if (!Buffer.isBuffer(iv)) iv = Buffer.from(iv);
+    if (!Buffer.isBuffer(key))
+      key = Buffer.from(key);
+    if (!Buffer.isBuffer(iv))
+      iv = Buffer.from(iv);
 
     // Key and IV validation.
-    if (Buffer.byteLength(key) !== this.keySize) throw new Error(`Key length must be ${this.keySize} bytes long`);
-    if (Buffer.byteLength(iv) !== this.ivSize) throw new Error(`IV length must be ${this.ivSize} bytes long`);
+    if (Buffer.byteLength(key) !== this.keySize)
+      throw new Error(`Key length must be ${this.keySize} bytes long`);
+    if (Buffer.byteLength(iv) !== this.ivSize)
+      throw new Error(`IV length must be ${this.ivSize} bytes long`);
 
     // Plaintext format.
     const inputEncoding = 'utf8';
@@ -65,12 +69,16 @@ export default abstract class Cipher implements CipherInterface {
    */
   public decrypt(encrypted: string, key: string|Buffer, iv: string|Buffer, inputEncoding: 'hex'|'binary'|'base64' = 'base64'): string {
     // Convert key and IV to buffer.
-    if (!Buffer.isBuffer(key)) key = Buffer.from(key);
-    if (!Buffer.isBuffer(iv)) iv = Buffer.from(iv);
+    if (!Buffer.isBuffer(key))
+      key = Buffer.from(key);
+    if (!Buffer.isBuffer(iv))
+      iv = Buffer.from(iv);
 
     // Key and IV validation.  
-    if (Buffer.byteLength(key) !== this.keySize) throw new Error(`Key length must be ${this.keySize} bytes long`);
-    if (Buffer.byteLength(iv) !== this.ivSize) throw new Error(`IV length must be ${this.keySize} bytes long`);
+    if (Buffer.byteLength(key) !== this.keySize)
+      throw new Error(`Key length must be ${this.keySize} bytes long`);
+    if (Buffer.byteLength(iv) !== this.ivSize)
+      throw new Error(`IV length must be ${this.ivSize} bytes long`);
 
     // Decrypted data format.
     const outputEncoding = 'utf8';
@@ -90,7 +98,7 @@ export default abstract class Cipher implements CipherInterface {
    */
   public createKey(type: 'buffer'|'hex' = 'buffer'): Buffer|string {
     return type === 'hex'
-      ? cryptoRandomString({ length: this.keySize, type: 'hex' })
+      ? cryptoRandomString({length: this.keySize, type: 'hex'})
       // ? crypto.randomBytes(Math.ceil(this.keySize / 2)).toString('hex').slice(0, this.keySize)
       : crypto.randomBytes(this.keySize);
   }
@@ -103,7 +111,7 @@ export default abstract class Cipher implements CipherInterface {
    */
   public createIV(type: 'buffer'|'hex' = 'buffer'): Buffer|string {
     return type === 'hex'
-      ? cryptoRandomString({ length: this.ivSize, type: 'hex' })
+      ? cryptoRandomString({length: this.ivSize, type: 'hex'})
       // ? crypto.randomBytes(Math.ceil(this.ivSize / 2)).toString('hex').slice(0, this.ivSize)
       : crypto.randomBytes(this.ivSize);
   }

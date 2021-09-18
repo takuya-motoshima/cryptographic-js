@@ -1,4 +1,4 @@
-import { version } from '~/package';
+import {version} from '~/package';
 import AES256CTR from '~/AES256CTR';
 import AES192CTR from '~/AES192CTR';
 import AES128CTR from '~/AES128CTR';
